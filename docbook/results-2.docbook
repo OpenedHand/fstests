@@ -483,6 +483,8 @@ an off screen pixmap.
 On x86 test-x is 3 times faster than test-fb, this is the
 effect of having an accelerated server.
 
+</para>
+
 </section>
 
 <section><title>Glyph Results</title>
