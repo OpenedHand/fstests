@@ -1,0 +1,31 @@
+What Does what
+==============
+
+test-fb - fullscreen blit to framebuffer
+
+text-x - fullscreen blit to X window via SHM 
+
+test-gdk - fullscreen blit to gtk drawing area via gdk pixbufs
+
+test-freeype - lines of text to fb
+
+test-freetype-cached - lines of text to fb ( pregenerates / caches glyphs )
+
+test-xft - lines of text to x window via xft
+
+test-pango - lines of text to x window via pango_xft
+
+test-pango-gdk - as above but to GDk Window
+
+test_pango_gtk - as above but to GTK drawing area
+
+test-pango-layout - to GTK drawing area via pango layouts
+
+test-gtk-layout - as above but direct to gtk window
+
+currently disbaled;
+
+test-sdl - sdl fullscreen blits
+
+test-gtk - list of Pango glyphs onto a GtkWindow with gdk_draw_glyphs
+          
