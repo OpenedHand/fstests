@@ -231,7 +231,6 @@ The tests were run on the following platforms;
 
 </variablelist>
 
-
 </section>
 <section>
 <title>Platform Notes</title>
@@ -364,22 +363,22 @@ However the c760 is using a 2.6 kernel and performance has actually
 degraded. This is not too much of a worry though, the 2.6 kernel on
 the c760 is very immature and the performance degration has been
 reported to the fb driver author. The fb driver is infact a rewrite of
-the 2.4 driver without access to the display chip technical details.
+the 2.4 driver without access to the display chips technical details.
 
 </para>
 <para>
 
 The 5500 framebuffer access is also very slow. The fb driver lacks
 acceleration functionality provided by the mediaq chip and it seems
-with display driver cheap in place just slows down the general case -
-The 3800 is faster.
+with display chip in place and it just slows down the general frame buffer access. The 3800 is fastest of all with direct access to the display.
 
 </para>
 <para>
 
-GDK pixbuf blits take a further speed hit over pur shm. A reason for
-this could be the pixbuf internals having the extra work of rounding
-down from 24bpp RGB to 16bpp RGB before blitting to the server.
+GDK pixbuf blits take a further large speed hit over pure X SHM blits. A
+reason for this could be the pixbuf internals having the extra work of
+rounding down from 24bpp RGB to 16bpp RGB before blitting to the
+server.
 
 </para>
 
@@ -388,7 +387,9 @@ down from 24bpp RGB to 16bpp RGB before blitting to the server.
 Interstingly this difference is not as large when run on an x86
 system.  On a 16bpp Xephyr I get 25917 KB/sec ( gtk ) vs 28195 KB/sec
 ( x ). Could there perhaps be a more serious issue with gtk on ARM ?
-This needs further investigation. 
+This needs further investigation. Version 2.4 of GTK was use for the
+tests which apparently does not suffer the previously reported SHM
+bug.
 
 </para>
 
@@ -491,7 +492,7 @@ indicating draw_glyphs is just a wrapper around pango_xft_render().
 
 test-pango-layout uses the pango layout api to render onto a gtk
 drawing area - most GTK widgets use layouts. There is an overhead
-involved, this could be worse it we were rendering more than just a
+involved, this could be worse if we were rendering more than just a
 simple line.
 
 </para>
