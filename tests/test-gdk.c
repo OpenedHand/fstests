@@ -112,7 +112,7 @@ usage(void)
 {
   fprintf(stderr, 
 	  "test-gdk " VERSION "\n"
-	  "usage: test-gdk [--verbose] [--cycles <int>]\n");
+	  "usage: test-gdk [--verbose] [--buffered] [--cycles <int>]\n");
   exit(1);
 } 
 
