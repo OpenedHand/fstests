@@ -2,7 +2,7 @@
 
 <article id="fullscreen2" lang="en">
   <articleinfo>
-    <title>Fullscreen 2 ( DRAFT III )</title>
+    <title>Fullscreen 2 ( DRAFT 4 )</title>
     <author>
       <firstname>Matthew</firstname>
       <surname>Allum</surname>
@@ -32,6 +32,15 @@ original tests on a newer 2.6 kernel.
 
 Graphics output is assumed to be by means of writing data to a 'dumb' kernel
 framebuffer device via direct means or an XServer. 
+
+</para>
+
+<para>
+
+All glyph rendering is done via an 8 bit mask rather than a sub pixel
+8888 mask.  This option is set via fontconfig
+<filename>local.conf</filename> or by not having the XServer advertise
+LCD pixel order.
 
 </para>
 
@@ -72,7 +81,7 @@ Performs blits directly to the raw framebuffer device ( no X ). From the origina
 
 <para>
 
-Performs blits to an X window via SHM shared memory X Images.  From the original tests.
+Performs blits to an X window via MIT-SHM shared memory X Images.  From the original tests.
 </para>
 
 </listitem>
@@ -88,6 +97,11 @@ Performs blits to an X window via SHM shared memory X Images.  From the original
 Performs blits via GDK-pixbufs on X. Blits are performed to a GTK
 drawing area widget with double buffering turned off. This makes the
 test comparable to the others as they perform no double buffering.
+
+</para>
+
+<para>
+A test-gtk-idle was also later created with double buffering turned on.
 
 </para>
 
@@ -141,7 +155,7 @@ No pango layout or GTK functionality is used.
 
 Renders lines of glyphs to a GTK drawing area ( with double buffering
 disabled ) via Pango layouts. GTK/GDK must be used as only versions of
-pango &lt; 1.8 expose layout functionality to 'raw xft'. One layout per
+pango &lt; 1.8 expose layout functionality to 'raw Xft'. One layout per
 line is used.
 
 </para>
@@ -157,7 +171,7 @@ line is used.
 
 Note all font based tests take similar arguments to specify what text
 is rendered ( run tests with -h to see ). By default Vera Sans fonts
-is used at 18 points with 20 lines of the ascii alphabet ( a -> z)
+is used at 18 points with 20 lines of the ASCII alphabet ('a' through to 'z')
 being rendered 200 times.
 
 </para>
@@ -293,7 +307,7 @@ The tests were run on the following platforms;
 
 <para>
 
-All ARM machines have the same version XServer and X librarys. Both of
+All ARM machines have the same version X Server and X library's. Both of
 which are from recent checkouts of the freedesktop.org cvs kdrive
 source.  In all of the above cases no hardware acceleration was
 used. The display is also running in its 'natural' orientation.
@@ -334,6 +348,7 @@ server.
   <entry>test-fb</entry>
   <entry>test-x</entry>
   <entry>test-gdk</entry>
+  <entry>test-gdk-idle</entry>
 </row>
 </thead>
 <tbody>
@@ -342,6 +357,7 @@ server.
   <entry align='right'>12177 KB/Sec</entry>
   <entry align='right'>11015 KB/sec</entry>
   <entry align='right'>6163 KB/sec</entry>
+  <entry align='right'>Not Run</entry>
 </row>
 
 <row>
@@ -349,6 +365,7 @@ server.
   <entry align='right'>7425 KB/Sec</entry>
   <entry align='right'>6412 KB/sec</entry>
   <entry align='right'>5184 KB/sec</entry>
+  <entry align='right'>Not Run</entry>
 </row>
 
 <row>
@@ -356,6 +373,7 @@ server.
   <entry align='right'>30241 KB/Sec </entry>
   <entry align='right'>23547 KB/Sec</entry>
   <entry align='right'>11144 KB/sec</entry>
+  <entry align='right'>10885 KB/sec</entry>
 </row>
 
 <row>
@@ -363,6 +381,7 @@ server.
   <entry align='right'>137896 KB/Sec</entry>
   <entry align='right'>370451 KB/Sec</entry>
   <entry align='right'>317215 KB/sec</entry>
+  <entry align='right'>Not Run</entry>
 </row>
 
 </tbody>
@@ -387,7 +406,7 @@ developments have happened in this area since the tests were last run.
 The c760, however, is using a 2.6 kernel and performance has actually
 degraded. This is not too much of a worry though, the 2.6 kernel on
 the c760 is very immature and the performance degration has been
-reported to the fb driver author. The fb driver is infact a rewrite of
+reported to the fb driver author. The fb driver is in fact a rewrite of
 the 2.4 driver without access to the display chips technical details.
 
 </para>
@@ -398,8 +417,8 @@ slow during heavy blits but actual font rendering was very fast in
 comparison.  The fb driver lacks any acceleration functionality
 provided by the mediaq chip. Could it possibly be the driver or
 hardware imposes some kind of bottleneck under heavy load that is 
-causing strnage results ? The same results appeared even after a second
-seperate run of the benchmarks.
+causing strange results ? The same results appeared even after a second
+separate run of the benchmarks.
 
 </para>
 
@@ -414,7 +433,7 @@ CPU however is the slowest.
 
 <para>
 
-GDK pixbuf blits take a further large speed hit over pure X SHM blits. A
+GDK pixbuf blits take a further large speed hit over pure X MIT-SHM blits. A
 reason for this could be the pixbuf internals having the extra work of
 rounding down from 24bpp RGB to 16bpp RGB before blitting to the
 server.
@@ -423,8 +442,8 @@ server.
 
 <para>
 
-Interestingly this difference is not as large when run on an x86
-system. Could there perhaps be a more serious issue with gtk on ARM ?
+Interestingly this difference is not as large when run on an X86
+system. Could there perhaps be a more serious issue with GTK on ARM ?
 This needs further investigation. Version 2.4 of GTK was use for the
 tests which apparently does not suffer the previously reported SHM
 bug.
@@ -433,7 +452,7 @@ bug.
 
 <para>
 
-The gtk blit test disabled the internal double buffering on the
+The GTK blit test disabled the internal double buffering on the
 drawing area widget ( via gtk_widget_set_double_buffered(FALSE) ) to
 make the test similar to that of other fullscreen blit tests which use
 no double buffering.
@@ -442,8 +461,8 @@ no double buffering.
 
 <para>
 
-Gtk double buffering working in such away that the widgets visible
-window is replaced with an offscreen pixmap before its expose()
+GTK double buffering working in such away that the widgets visible
+window is replaced with an off screen pixmap before its expose()
 handler is called, on returning from this handler the pixmap is copied
 to the visible window. To accomplish a similar test with double
 buffering the blit must happen else when in the code so the double
@@ -456,31 +475,16 @@ expose handler.
 <para>
 
 Such a test was created ( test-gdk-idle ) and the results, from Ipaq
-3800, were just slightly worse with;
-
-</para>
-<para>
-
-<literallayout class="monospaced">
-
- ./test-gdk-idle
-test-gdk-idle: write speed: 11227 KB/sec
-
-</literallayout>
-
-</para>
-<para>
-
-Any performance loss in the above is likely due to the frequency of
-the idle handler getting called. This assumes the cost is moving the
-pixmap from off to on screen is made up by the time save blitting to
-an off screen pixmap.
+3800, were just slightly worse. Any performance loss is likely due to
+the frequency of the idle handler getting called. This assumes the
+cost is moving the pixmap from off to on screen is made up by the time
+save blitting to an off screen pixmap.
 
 </para>
 
 <para> 
 
-On x86 test-x is 3 times faster than test-fb, this is the
+On X86 test-x is 3 times faster than test-fb, this is the
 effect of having an accelerated server.
 
 </para>
@@ -510,7 +514,7 @@ effect of having an accelerated server.
   <entry align='right'>Not Run</entry>
   <entry align='right'>9386 glyphs/sec</entry>
   <entry align='right'>6712 glyphs/sec</entry>
-  <entry align='right'>5557 glyphs/sec</entry>
+  <entry align='right'>Not Run</entry>
 </row>
 
 <row>
@@ -519,7 +523,7 @@ effect of having an accelerated server.
   <entry align='right'>Not Run</entry>
   <entry align='right'>18991 glyphs/sec</entry>
   <entry align='right'>12192 glyphs/sec</entry>
-  <entry align='right'>9344  glyphs/sec</entry>
+  <entry align='right'>5823  glyphs/sec</entry>
 </row>
 
 <row>
@@ -528,7 +532,7 @@ effect of having an accelerated server.
   <entry align='right'>25304 glyphs/sec</entry>
   <entry align='right'>17937 glyphs/sec</entry>
   <entry align='right'>11458 glyphs/sec</entry>
-  <entry align='right'>9282 glyphs/sec</entry>
+  <entry align='right'>6778 glyphs/sec</entry>
 </row>
 
 <row>
@@ -552,16 +556,16 @@ effect of having an accelerated server.
 
 <para>
 
-With pregenerated glyphs freetype is fastest, then xft. The plain
+With pregenerated glyph's freetype is fastest, then Xft. The plain
 pango line rendering is approximately 30% slower, with pango layout
-rendering being approximately a further 10-20% slower.
+rendering being approximately a further 30-50% slower.
 
 </para>
 
 <para>
 
 Although total speeds vary between each platform, the fraction of
-difference in speed between each test type stays approximatly the same
+difference in speed between each test type stays approximately the same
 ( though this is not so true on Thinkpad ).
 
 </para>
@@ -569,22 +573,22 @@ difference in speed between each test type stays approximatly the same
 <para>
 
 The Thinkpad results, though fast, are slower than expected when
-compared to blit speeds on both fb and X. I am not sure why this is.
+compared to blit speeds on both framebuffer and X. I am not sure why this is.
 
 </para>
 
 <para>
 
 The non cached freetype test is much slower than expected on ARM
-platforms. On a desktop x86 system the results are much improved with
-speeds as expected greater than that of xft. The reason for the low
+platforms. On a desktop X86 system the results are much improved with
+speeds as expected greater than that of Xft. The reason for the low
 performance on arm is likely the lack of any glyph bitmap caching per
 glyph render and the bitmap generation using much floating point.
 
 </para>
 <para>
 
-This proves that xft is caching glyph bitmap generation and it is definetly 
+This proves that Xft is caching glyph bitmap generation and it is definetly 
 required for acceptable performance. 
 
 </para>
@@ -593,18 +597,8 @@ required for acceptable performance.
 To further improve on this a version of test-freetype (
 test-freetype-cached.c ) was created that pregenerated glypth bitmaps
 in a simple cache before painting them. Running on the Ipaq 3800 gave
-( including cache generation time );
-
-</para>
-<para>
-
-<literallayout class="monospaced">
-
-test-freetype-cached: pre generated glyphs in 1159 ms
-test-freetype-cached: Total time 2055 ms, 
-                      52000 glyphs rendered = approx 25304 glyphs per second
-
-</literallayout>
+much improved performance and an initial 'cache generation' time of
+1159 ms. 
 
 </para>
 
@@ -618,10 +612,10 @@ No subpixel or even basic anti-aliasing was performed.
 
 <para>
 
-test-pango writes text via the low level pango xft calls to render
-lines of text to an X window. No gdk/gtk calls are used. To
-investigate the overhead of rendering to a gtk widget and window two
-further tests were created - test-pango-gdk to a GDk Window and
+test-pango writes text via the low level pango Xft calls to render
+lines of text to an X window. No GDK/GTK calls are used. To
+investigate the overhead of rendering to a GTK widget and window two
+further tests were created - test-pango-gdk to a GDK Window and
 test_pango_gtk - to GTK drawing area. Benchmarks from these on the
 3800 were approximately equal. Another test was created using
 gdk_draw_glyphs() instead of pango_xft_render() again results were
@@ -632,10 +626,11 @@ pango_xft_render().
 
 <para>
 
-test-pango-layout uses the pango layout api to render onto a gtk
+test-pango-layout uses the pango layout API to render onto a GTK
 drawing area - most GTK widgets use layouts. There is an overhead
-involved, this could be worse if we were rendering more than just a
-simple line.
+involved, and this could be worse if we were rendering more than just
+a simple line. Though one would expect a performance improvement if a
+single layout was used for all text rather than a layout per line.
 
 </para>
 
@@ -667,7 +662,7 @@ Some ideas for future tests.
 </listitem>
 
 <listitem>
-<para>Investigate slow glyph speeds on x86.</para>
+<para>Investigate slow glyph speeds on X86.</para>
 </listitem>
 
 
@@ -696,6 +691,11 @@ Some ideas for future tests.
 <para><ulink url="http://www.fontconfig.org/wiki/">Xft/Fontconfig</ulink></para>
 </listitem>
 
+<listitem>
+<para><ulink url="http://www.gnome.org/fonts/">Bitstream Vera fonts</ulink></para>
+</listitem>
+
+
 </itemizedlist>
 
 </para>
@@ -703,4 +703,5 @@ Some ideas for future tests.
 </section>
 
 </article>
+
 
