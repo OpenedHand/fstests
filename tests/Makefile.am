@@ -1,7 +1,8 @@
-AM_CFLAGS = @GCC_FLAGS@ 
+AM_CFLAGS = @GCC_FLAGS@
 
 noinst_PROGRAMS= test-fb           \
 	      test-gdk          \
+	      test-gdk-idle          \
 	      test-gtk-layout   \
               test-pango-layout \
               test-x            \
@@ -19,6 +20,11 @@ test_fb_SOURCES = test-fb.c
 test_gdk_SOURCES = test-gdk.c
 test_gdk_LDADD = @GTK_LIBS@
 test_gdk_CFLAGS = @GTK_CFLAGS@
+
+# fullscreen blit to gtk drawing area via gtk pixbufs in an idle handler
+test_gdk_idle_SOURCES = test-gdk-idle.c
+test_gdk_idle_LDADD = @GTK_LIBS@
+test_gdk_idle_CFLAGS = @GTK_CFLAGS@
 
 # fullscreen blit to x window via shm
 test_x_SOURCES = test-x.c
