@@ -1,5 +1,5 @@
 /*
-  test-xft.c -- Measure fullscreen write speed under X. 
+  test-pango.c -- Measure fullscreen write speed under X. 
 
   Copyright (C) 2005 Matthew Allum, Openedhand Ltd. 
 
@@ -25,7 +25,7 @@
  
   Compile with
 
-  gcc -Wall -O2 ` pkg-config --libs --cflags xft` test-xft.c -o test-xft
+  gcc -Wall -O2 ` pkg-config --libs --cflags pango pangoxft` test-pango.c -o test-pango
 
 */
 
@@ -37,13 +37,14 @@
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 
-#include <X11/Xmd.h> 
-#include <X11/Xft/Xft.h>
+#include <pango/pango.h>
+#include <pango/pangoxft.h>
+
 
 #define VERSION "0.1"
 
 #define DEFAULT_TEXT_STR "abcdefghijklmnopqrstuvwxyz"
-#define DEFAULT_FONT     "sans serif-18"
+#define DEFAULT_FONT     "sans serif 18"
 #define DEFAULT_N_LINES  20
 #define DEFAULT_N_CYCLES 100
 
@@ -136,10 +137,16 @@ static void
 x_blit(void)
 {
   int          x = 0, y = 0, i, j, nchars;
-  XftDraw     *xftdraw;
-  XftFont     *xftfont;
-  XftColor     xftcol;    
-  XRenderColor colortmp;
+
+  PangoContext         *pgo_context;
+  PangoFontMap         *pgo_fontmap;
+  PangoFontDescription *fontdes;
+  PangoFont            *font;
+  PangoFontMetrics     *metrics;
+
+  XftDraw              *xftdraw;
+  XftColor              xftcol;    
+  XRenderColor          colortmp;
 
   unsigned long long start_clock, finish_clock, diff_clock; 
 
@@ -155,11 +162,25 @@ x_blit(void)
 		     &colortmp, &xftcol);
 
 
-  if ((xftfont = XftFontOpenName(dpy, scr, TextFont)) == NULL)
+  pgo_context = pango_xft_get_context (dpy, scr);
+  pgo_fontmap = pango_xft_get_font_map (dpy, scr);
+
+  if ((fontdes = pango_font_description_from_string(TextFont)) == NULL)
     {
       fprintf(stderr, "Failed to load font '%s', exiting.", TextFont);
       exit(-1);
     }
+
+  pango_context_set_font_description(pgo_context, fontdes);
+
+  if ((font = pango_font_map_load_font (pgo_fontmap, 
+				       pgo_context, fontdes)) == NULL)
+    {
+      fprintf(stderr, "Failed to load font '%s', exiting.", TextFont);
+      exit(-1);
+    }
+
+  metrics = pango_font_get_metrics(font, NULL);
 
   xftdraw = XftDrawCreate(dpy, (Drawable) win,DefaultVisual(dpy, scr),
 			  DefaultColormap(dpy, scr));
@@ -176,16 +197,76 @@ x_blit(void)
   
   for (j=0; j<TotalCycles; j++)
     {
-      y = 0;
+      y = PANGO_PIXELS(pango_font_metrics_get_ascent(metrics));
+      
       for (i=0; i<TextNLines; i++)
 	{
-	  XftDrawString8(xftdraw, &xftcol, xftfont, x, y, 
-			 TextStr, strlen(TextStr));
-	  y += (xftfont->ascent + xftfont->descent);
+	  unsigned char *str = NULL;
+	  GList *items_head = NULL, *items = NULL;
+	  PangoAttrList *attr_list = NULL;
+
+	  /* XXX We dont do markup ? 
+	     GError *error;
+
+	     pango_parse_markup (text, strlen(text), 
+	     0,
+	     &attr_list,
+	     (char **)&str,
+	     NULL,
+	     &error);
+	  */
+
+	  x = 0;
+
+	  attr_list = pango_attr_list_new (); /* no markup - empty attributes */
+	  str       = strdup(TextStr);
+
+	  /* analyse string, breaking up into items */
+	  items_head = items = pango_itemize (pgo_context, str, 
+					      0, strlen(TextStr),
+					      attr_list, NULL);
+
+	  while (items)
+	    {
+	      PangoItem        *this   = (PangoItem *)items->data;
+	      PangoGlyphString *glyphs = pango_glyph_string_new ();
+	      PangoRectangle    rect;
+       
+	      /* shape current item into run of glyphs */
+	      pango_shape  (&str[this->offset], this->length, 
+			    &this->analysis, glyphs);
+
+	      /* render the glyphs */
+	      pango_xft_render (xftdraw, 
+				&xftcol,
+				this->analysis.font,
+				glyphs,
+				x, y);
+
+	      /* calculate rendered area */
+	      pango_glyph_string_extents (glyphs,
+					  this->analysis.font,
+					  &rect,
+					  NULL);
+
+	      x += ( rect.x + rect.width ) / PANGO_SCALE;
+       
+	      pango_item_free (this);
+	      pango_glyph_string_free (glyphs);
+
+	      items = items->next;
+	    }
+
+	  if (attr_list)  pango_attr_list_unref (attr_list);
+	  if (str)        free(str); 
+	  if (items_head) g_list_free (items_head);
+
+	  y += ( PANGO_PIXELS(pango_font_metrics_get_ascent(metrics)) + PANGO_PIXELS(pango_font_metrics_get_descent(metrics) ));
 	}
+
       XSync(dpy, False);
     }
-  
+
   /* render fonts here */
 
   finish_clock = GetTimeInMillis();
@@ -194,7 +275,7 @@ x_blit(void)
 
   nchars = strlen(TextStr) * TextNLines * TotalCycles;
 
-  printf("test-xft: Total time %lli ms, %i glyphs rendered = approx %lli glyphs per second\n",
+  printf("test-pango: Total time %lli ms, %i glyphs rendered = approx %lli glyphs per second\n",
 	 diff_clock, nchars, ( 1000 * nchars ) / diff_clock);
 
 }
@@ -209,8 +290,8 @@ static void
 usage(void)
 {
   fprintf(stderr, 
-	  "test-xft " VERSION "\n"
-	  "usage: test-xft [options..]\n"
+	  "test-pango " VERSION "\n"
+	  "usage: test-pango [options..]\n"
           "Options are;\n"
           "-display <X display>\n"
 	  "--verbose\n"
