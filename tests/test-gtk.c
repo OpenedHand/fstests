@@ -58,6 +58,7 @@ static Display *dpy;
 static int      scr;	
 
 static Bool     Verbose;
+static Bool     Buffered = True;
 
 static unsigned long long
 GetTimeInMillis(void)
@@ -75,7 +76,7 @@ x_open(void)
   gtk_window_set_default_size (GTK_WINDOW (window), gdk_screen_get_width (gdk_screen_get_default()), gdk_screen_get_height (gdk_screen_get_default()));
   gtk_widget_show (window);
   gtk_widget_map (window);
-  gtk_widget_set_double_buffered (window, FALSE);
+  gtk_widget_set_double_buffered (window, Buffered);
   gdk_window_fullscreen (window->window);
   dpy = gdk_x11_get_default_xdisplay ();
   scr = gdk_x11_get_default_screen ();
@@ -211,11 +212,12 @@ void
 usage(void)
 {
   fprintf(stderr, 
-	  "test-pango " VERSION "\n"
-	  "usage: test-pango [options..]\n"
+	  "test-gtk " VERSION "\n"
+	  "usage: test-gtk [options..]\n"
           "Options are;\n"
           "-display <X display>\n"
 	  "--verbose\n"
+	  "--no-buffering Turn of GTK+ double buffering\n"
 	  "--text-str <str> text to render ( defaults to alphabet )\n"
 	  "--font <str> Xft font to use ( defaults to " DEFAULT_FONT ")\n"
 	  "--nlines <int> Number of lines to draw per cycle\n"
@@ -263,6 +265,11 @@ main (int argc, char **argv)
       if (++i>=argc) usage ();
       TotalCycles = atoi(argv[i]);
       if (TotalCycles < 1) usage();
+      continue;
+    }
+
+    if (!strcmp ("--no-buffering", argv[i]))  {
+      Buffered = False;
       continue;
     }
 
