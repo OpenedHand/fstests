@@ -2,7 +2,7 @@
 
 <article id="fullscreen2" lang="en">
   <articleinfo>
-    <title>Fullscreen 2 ( DRAFT II )</title>
+    <title>Fullscreen 2 ( DRAFT III )</title>
     <author>
       <firstname>Matthew</firstname>
       <surname>Allum</surname>
@@ -327,7 +327,7 @@ server.
 <para>
 
 <table frame='all'><title>Test Results</title>
-<tgroup cols='8' align='left' colsep='1' rowsep='1'>
+<tgroup cols='4' align='left' colsep='1' rowsep='1'>
 <thead>
 <row>
   <entry>Device</entry>
@@ -663,7 +663,7 @@ Some ideas for future tests.
 </listitem>
 
 <listitem>
-<para>Create a pango test with all lines in a single layout</para>
+<para>Create a pango test with all lines in a single layout.</para>
 </listitem>
 
 <listitem>
