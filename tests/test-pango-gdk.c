@@ -156,16 +156,6 @@ x_blit(void)
 	  GList *items_head = NULL, *items = NULL;
 	  PangoAttrList *attr_list = NULL;
 
-	  /* XXX We dont do markup ? 
-	     GError *error;
-
-	     pango_parse_markup (text, strlen(text), 
-	     0,
-	     &attr_list,
-	     (char **)&str,
-	     NULL,
-	     &error);
-	  */
 
 	  x = 0;
 

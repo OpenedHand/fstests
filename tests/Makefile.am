@@ -6,6 +6,9 @@ bin_PROGRAMS= test-fb           \
               test-x            \
               test-freetype     \
               test-pango        \
+	      test-pango-gdk    \
+	      test-pango-gtk    \
+	      test-freetype-cached \
               test-xft
 
 
@@ -26,6 +29,10 @@ test_x_CFLAGS = @XLIBS_CFLAGS@
 test_freetype_SOURCES = test-freetype.c
 test_freetype_LDADD = @FREETYPE_LIBS@
 test_freetype_CFLAGS = @FREETYPE_CFLAGS@
+
+test_freetype_cached_SOURCES = test-freetype-cached.c
+test_freetype_cached_LDADD = @FREETYPE_LIBS@
+test_freetype_cached_CFLAGS = @FREETYPE_CFLAGS@
 
 test_pango_SOURCES = test-pango.c
 test_pango_LDADD = @PANGO_LIBS@
