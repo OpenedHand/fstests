@@ -189,7 +189,7 @@ x_blit(void)
 
   if (Verbose)
     {
-      printf("test-xft: Font loaded, drawable + color created in %lli ms\n",
+      printf("test-pango: Font loaded, drawable + color created in %lli ms\n",
 	     finish_clock - start_clock);
     }
 
