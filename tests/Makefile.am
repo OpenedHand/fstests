@@ -2,6 +2,8 @@ AM_CFLAGS = @GCC_FLAGS@
 
 bin_PROGRAMS= test-fb           \
 	      test-gdk          \
+	      test-gtk          \
+	      test-gtk-layout   \
               test-pango-layout \
               test-x            \
               test-freetype     \
@@ -17,6 +19,14 @@ test_fb_SOURCES = test-fb.c
 test_gdk_SOURCES = test-gdk.c
 test_gdk_LDADD = @GTK_LIBS@
 test_gdk_CFLAGS = @GTK_CFLAGS@
+
+test_gtk_SOURCES = test-gtk.c
+test_gtk_LDADD = @GTK_LIBS@
+test_gtk_CFLAGS = @GTK_CFLAGS@
+
+test_gtk_layout_SOURCES = test-gtk-layout.c
+test_gtk_layout_LDADD = @GTK_LIBS@
+test_gtk_layout_CFLAGS = @GTK_CFLAGS@
 
 test_pango_layout_SOURCES = test-pango-layout.c
 test_pango_layout_LDADD = @GTK_LIBS@
