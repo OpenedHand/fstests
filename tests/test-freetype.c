@@ -1,5 +1,5 @@
 /*
-  test-fb.c -- Measure fullscreen framebuffer write speed. 
+  test-freetype.c -- Measure fullscreen framebuffer write speed. 
   Version 0.5
 
   Copyright (C) 2003 Matthew Allum, Openedhand Ltd. 
@@ -375,7 +375,7 @@ framebuffer_blit(void)
 
   nchars = strlen(TextStr) * TextNLines * TotalCycles;
 
-  printf("test-xft: Total time %lli ms, %i glyphs rendered = approx %lli glyphs per second\n",
+  printf("test-freetype: Total time %lli ms, %i glyphs rendered = approx %lli glyphs per second\n",
 	 diff_clock, nchars, ( 1000 * nchars ) / diff_clock);
  
   free(data);
@@ -386,8 +386,8 @@ static void
 usage(void)
 {
   fprintf(stderr, 
-	  "test-xft " VERSION "\n"
-	  "usage: test-xft [options..]\n"
+	  "test-freetype " VERSION "\n"
+	  "usage: test-freetype [options..]\n"
           "Options are;\n"
           "-display <X display>\n"
 	  "--verbose\n"
