@@ -26,7 +26,7 @@
  
   Compile with
 
-  gcc `freetype-config --libs --cflags` test-freetype.c -o test-freetype
+  gcc `freetype-config --libs --cflags` test-freetype-cached.c -o test-freetype-cached
 
 */
 

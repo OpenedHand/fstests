@@ -8,7 +8,7 @@
 
 /* 
 
-gcc test-gdk.c -o test-gdk `pkg-config --libs --cflags gtk+-2.0`
+gcc test-pango-layout.c -o test-pango-layout `pkg-config --libs --cflags gtk+-2.0`
 
  */
 
