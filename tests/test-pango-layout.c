@@ -120,7 +120,7 @@ usage(void)
           "-display <X display>\n"
 	  "--verbose\n"
 	  "--text-str <str> text to render ( defaults to alphabet )\n"
-	  "--font <str> Xft font to use ( defaults to " DEFAULT_FONT ")\n"
+	  "--font <str> pango font to use ( defaults to " DEFAULT_FONT ")\n"
 	  "--nlines <int> Number of lines to draw per cycle\n"
 	  "--cycles <int>  number of times to runs the test ( default 100)\n"
 	  );

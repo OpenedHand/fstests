@@ -313,9 +313,11 @@ framebuffer_blit(void)
   /* Below assumes 72 dpi */
   error = FT_Set_Char_Size( face, 0, 16*64, 72, 72); 
 
+  finish_clock = GetTimeInMillis();
+
   if (Verbose)
     {
-      printf("test-xft: Font loaded, drawable + color created in %lli ms\n",
+      printf("test-freetype: Font loaded, drawable + color created in %lli ms\n",
 	     finish_clock - start_clock);
     }
 
