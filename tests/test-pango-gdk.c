@@ -58,10 +58,6 @@ static GtkWidget *window;
 
 static Display *dpy;
 static int      scr;	
-//static Visual  *vis;
-//static Window   root, win;
-//static int      depth;
-//static GC       gc;
 
 static Bool     Verbose;
 
