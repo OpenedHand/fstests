@@ -180,9 +180,10 @@ main(int argc, char **argv)
   gtk_window_maximize(GTK_WINDOW(window)); /* fullscreen  */
 
   gtk_container_set_border_width(GTK_CONTAINER(window), 0);
-  
-  
+
   darea = gtk_drawing_area_new();
+
+  gtk_widget_set_double_buffered (darea, FALSE);  
 
   gtk_container_add(GTK_CONTAINER(window), darea);
 

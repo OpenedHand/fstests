@@ -1,0 +1,10 @@
+2005-01-28  mallum,,,  <mallum@openedhand.com>
+
+	* Makefile.am:
+	* autogen.sh:
+	* configure.ac:
+	Autofooify
+
+	* test-pango-layout.c: (main):
+	Turn off double buffering
+
