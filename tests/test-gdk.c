@@ -92,7 +92,8 @@ expose(GtkWidget      *darea,
       // gtk_widget_queue_draw_area(darea, 0, 0, width, height);
 
       /* Assume this flushes ? */
-      gdk_display_flush(gdk_display_get_default());
+      gdk_display_sync(gdk_display_get_default());
+      // gdk_display_flush(gdk_display_get_default());
 
     }
 

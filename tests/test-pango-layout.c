@@ -91,9 +91,12 @@ expose(GtkWidget      *darea,
 
 	  gdk_draw_layout (darea->window, gc, 0, y, layout);
 
+	  gdk_display_sync(gdk_display_get_default());
+
 	  y += 20; 	     /* XXX should be font size though not critical */
 	}
     }
+
 
   finish_clock = GetTimeInMillis();
 
