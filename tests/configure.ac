@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT([fstests], 0.0, [mallum@o-hand.com])
+AC_INIT([fstests], 0.1, [mallum@o-hand.com])
 AC_CONFIG_SRCDIR([test-x.c])
 
 AM_INIT_AUTOMAKE()
