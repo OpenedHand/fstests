@@ -1,0 +1,224 @@
+<table frame="all">
+        <title>results-j720.csv</title>
+        <tgroup cols="6" align="char" charoff="50" char=".">
+        <thead>
+        <row><entry>Device</entry>
+<entry> Blit</entry>
+<entry> Orientation</entry>
+<entry> Bandwidth ( Kb/Sec)</entry>
+<entry> Surface Creation time ( ms)</entry>
+<entry> Frames per sec
+</entry>
+</row>
+       </thead>
+       <tbody><row>
+<entry> framebuffer via VT switch from X</entry>
+<entry> Single Blit</entry>
+<entry> na</entry>
+<entry align='right'>3996.00</entry>
+<entry align='right'>19.00</entry>
+<entry align='right'>13.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Single Blit</entry>
+<entry> normal</entry>
+<entry align='right'>3851.70</entry>
+<entry align='right'>53.10</entry>
+<entry align='right'>12.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (x)</entry>
+<entry> normal</entry>
+<entry align='right'>1689.50</entry>
+<entry align='right'>53.20</entry>
+<entry align='right'>5.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (y)</entry>
+<entry> normal</entry>
+<entry align='right'>3254.80</entry>
+<entry align='right'>53.10</entry>
+<entry align='right'>10.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Single Blit</entry>
+<entry> left</entry>
+<entry align='right'>2286.00</entry>
+<entry align='right'>53.10</entry>
+<entry align='right'>7.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (x)</entry>
+<entry> left</entry>
+<entry align='right'>1204.40</entry>
+<entry align='right'>53.00</entry>
+<entry align='right'>4.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (y)</entry>
+<entry> left</entry>
+<entry align='right'>1697.10</entry>
+<entry align='right'>53.30</entry>
+<entry align='right'>5.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Single Blit</entry>
+<entry> right</entry>
+<entry align='right'>2295.10</entry>
+<entry align='right'>53.20</entry>
+<entry align='right'>7.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (x)</entry>
+<entry> right</entry>
+<entry align='right'>1203.40</entry>
+<entry align='right'>53.10</entry>
+<entry align='right'>4.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (y)</entry>
+<entry> right</entry>
+<entry align='right'>1710.30</entry>
+<entry align='right'>53.20</entry>
+<entry align='right'>5.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Single Blit</entry>
+<entry> inverted</entry>
+<entry align='right'>3424.10</entry>
+<entry align='right'>53.00</entry>
+<entry align='right'>11.00</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (x)</entry>
+<entry> inverted</entry>
+<entry align='right'>1197.90</entry>
+<entry align='right'>53.00</entry>
+<entry align='right'>3.20</entry>
+</row>
+<row>
+<entry> X MIT-SHM PutImage</entry>
+<entry> Multiple Blit (y)</entry>
+<entry> inverted</entry>
+<entry align='right'>2826.70</entry>
+<entry align='right'>53.10</entry>
+<entry align='right'>9.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Single Blit</entry>
+<entry> normal</entry>
+<entry align='right'>2655.50</entry>
+<entry align='right'>52.40</entry>
+<entry align='right'>8.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(x)</entry>
+<entry> normal</entry>
+<entry align='right'>922.40</entry>
+<entry align='right'>52.50</entry>
+<entry align='right'>2.90</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(y)</entry>
+<entry> normal</entry>
+<entry align='right'>2283.30</entry>
+<entry align='right'>52.50</entry>
+<entry align='right'>7.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Single Blit</entry>
+<entry> left</entry>
+<entry align='right'>1808.60</entry>
+<entry align='right'>52.60</entry>
+<entry align='right'>5.90</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(x)</entry>
+<entry> left</entry>
+<entry align='right'>772.30</entry>
+<entry align='right'>52.30</entry>
+<entry align='right'>2.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(y)</entry>
+<entry> left</entry>
+<entry align='right'>2058.10</entry>
+<entry align='right'>52.60</entry>
+<entry align='right'>6.10</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Single Blit</entry>
+<entry> right</entry>
+<entry align='right'>1827.90</entry>
+<entry align='right'>52.40</entry>
+<entry align='right'>6.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(x)</entry>
+<entry> right</entry>
+<entry align='right'>772.00</entry>
+<entry align='right'>52.50</entry>
+<entry align='right'>2.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(y)</entry>
+<entry> right</entry>
+<entry align='right'>2074.80</entry>
+<entry align='right'>52.30</entry>
+<entry align='right'>6.20</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Single Blit</entry>
+<entry> inverted</entry>
+<entry align='right'>2433.00</entry>
+<entry align='right'>52.50</entry>
+<entry align='right'>8.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(x)</entry>
+<entry> inverted</entry>
+<entry align='right'>819.60</entry>
+<entry align='right'>52.60</entry>
+<entry align='right'>2.00</entry>
+</row>
+<row>
+<entry> X PutImage</entry>
+<entry> Multiple Blit(y)</entry>
+<entry> inverted</entry>
+<entry align='right'>2516.30</entry>
+<entry align='right'>52.60</entry>
+<entry align='right'>7.80</entry>
+</row>
+<row>
+<entry> framebuffer no X</entry>
+<entry> Single Blit</entry>
+<entry> na</entry>
+<entry align='right'>3807.80</entry>
+<entry align='right'>19.00</entry>
+<entry align='right'>12.30</entry>
+</row>
+</tbody>
+       </tgroup>
+       </table>

@@ -1,0 +1,586 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.0//EN" [
+  <!ENTITY c700 SYSTEM "results-c700.docbook">
+  <!ENTITY ipaq SYSTEM "results-ipaq.docbook">
+  <!ENTITY z5000d SYSTEM "results-z5000d.docbook">
+  <!ENTITY j720 SYSTEM "results-j720.docbook">
+]>
+<article>
+<artheader>
+<title>Fullscreen</title>
+<author><firstname>Matthew</firstname>
+<surname>Allum</surname>
+<email>matthew@openedhand.com</email>
+</author>
+<copyright>
+      <year>2003</year>
+      <holder>Openedhand Ltd</holder>
+    </copyright>
+</artheader>
+<section><title>Introduction</title>
+<para>
+
+This report aims to benchmark fullscreen 'blits' on handheld ARM based
+devices, Specifically for the evaluation of the suitability for 
+fullscreen 2D games and video playback.
+
+There are numerous available handheld ARM computers capable of running
+a Linux kernel and implementing a supported graphical display.
+
+</para>
+
+<para>
+
+Graphics output is assumed to be by means of writing data to a 'dumb' kernel
+framebuffer device via direct means or an XServer. 
+
+</para>
+
+</section>
+<section><title>Tests</title>
+<para>
+
+For the tests three simple test programs were created. They are
+written in C and the same binaries of each program used on each
+platform. The source of the tests is <link url="tests/">available</a>.
+
+Each performs a timed single 'full' blit or a fullscreen blit made up
+of multiple 1 pixel rows or columns. Also if supported by the output
+mechanism ( eg XServer with XRandR ) blits are performed at different
+screen orientations. The blit method is then repeated 100 times and
+timings calculated.
+
+All of which exhibit similar behavior and code structure but output
+to to the display by different means. 
+
+<variablelist>
+
+<varlistentry>
+<term>test-fb</term>
+<listitem>
+Performs a blit by writing directly to the framebuffer device by means of a 
+memcopy. 
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>test-x</term>
+<listitem>
+
+Performs blits under X windows via client side
+XImages. Once created, an XImage is transfered to the X11 server for display
+by either local sockets or shared memory ( MIT-SHM extension ).
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>test-sdl</term>
+<listitem>
+<para>
+
+The 'Simple Direct MediaLayer' ( SDL ) is a multi-platform graphics
+library that abstracts the mechanics of communication with a
+particular device. For example the same binary will run both with X
+and the framebuffer.
+
+</para>
+<para>
+
+A SDL 1.2 ARM Binary from Debian Sid was used.
+
+</para>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para>
+
+Each test was run with various parameters using this <ulink
+url="scripts/run-fb-tests.sh">script</ulink>. The script runs each test 10 times and averages
+results.
+
+</para>
+<para>
+
+There is a freely available popular X benchmark tool - 'X11perf'. This
+could have been used rather than test-x, but it exhibits problems
+running on a small display. However results from X11Perf and task-x
+on a larger display were comparably similiar.
+
+</section>
+<section>
+<title>Test Platforms</title>
+
+The tests were run on the following platforms;
+
+<variablelist>
+
+<varlistentry>
+<term>HP/Compaq Ipaq 3870</term>
+<listitem>
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+CPU: SA1110 StrongARM 206Mhz
+</listiem>
+<listitem>
+RAM: 64MB
+</listitem>
+<listitem>
+Display: 240x320x16 LCD
+</listitem>
+<listitem>
+  
+GFX Chip: Na
+</listitem>
+<listitem>
+
+X11: XFree86 v4.3, kdrive Xfbdev server
+</listitem>
+<listitem>
+
+kernel: 2.4.19-rmk6-pxa1-hh13
+</listitem>
+
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Sharp Zaurus 5000d</term>
+<listitem>
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+CPU: SA1110 StrongARM 206Mhz
+</listiem>
+<listitem>
+RAM: 16MB
+</listitem>
+<listitem>
+Display: 240x320x16 LCD
+</listitem>
+<listitem>
+  
+GFX Chip: Na
+</listitem>
+<listitem>
+
+X11: XFree86 v4.3, kdrive Xfbdev server
+</listitem>
+<listitem>
+
+kernel: 2.4.6-rmk1-np2-embeddix
+</listitem>
+
+</listitem>
+</itemizedlist>
+</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Sharp Zaurus C700</term>
+<listitem>
+
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+CPU: PXA 250 XSCALE ARM 400Mhz
+</listiem>
+<listitem>
+RAM: 32MB
+</listitem>
+<listitem>
+Display: 640x480x16 LCD
+</listitem>
+<listitem>
+  GFX Chip: ATI IMAGEON 100
+</listitem>
+<listitem>
+
+X11: XFree86 v4.3, kdrive Xfbdev server
+</listitem>
+<listitem>
+
+kernel: 2.4.18-rmk1-embedix
+</listitem>
+
+</listitem>
+</itemizedlist>
+</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>HP Jornada 720</term>
+<listitem>
+
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+CPU: SA1110 StrongARM 206Mhz
+</listiem>
+<listitem>
+RAM: 32MB
+</listitem>
+<listitem>
+Display: 640x240x16 LCD
+</listitem>
+<listitem>
+  
+GFX Chip: Epson SED1356
+</listitem>
+<listitem>
+
+X11: XFree86 v4.3, kdrive Xfbdev server
+</listitem>
+<listitem>
+
+kernel: 2.4.19-rmk6-pxa1-hh3-j720
+</listitem>
+
+</listitem>
+</itemizedlist>
+</para>
+
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para>
+All devices have a bus speed of approximate 100Mhz. 
+</para>
+<section><title>XServer Notes</title>
+
+<para>
+
+All machines have the same XServer and X library binarys. Both of
+which are from the XFree86 4.3 Distubution. The Xserver used is a
+kdrive Xfbdev server, more applicable to embedded type platforms. The
+XFree core server, used on many desktop machines, has a larger
+and more complex driver interface.
+
+</para>
+
+<para>
+
+kdrive Xfbdev is non accelerated and simply writes to the framebuffer
+device.  Kdrive supports on the fly screen rotation via the XRandR
+extension, but lacks support for the DGA extension which is an older
+XFree extension that allows for direct fullscreen framebuffer access.
+
+</para>
+
+<para>
+
+The kdrive server was compiled to support tslib, a touchscreen
+abstraction library and patched to improve VT switching. Binary
+packages, the build config and the applied patches are available from
+<ulink
+url="http://handhelds.org/~mallum/xpkgs">http://handhelds.org/~mallum/xpkgs</ulink>
+
+</para>
+</section>
+
+</section>
+
+</para>
+
+</section>
+<section><title>Benchmark Results</title>
+<para>
+&ipaq
+&z5000d
+&c700
+&j720
+
+</para>
+
+</section>
+
+<section><title>Discussion</title>
+
+<section><title>Devices</title>
+
+<para>
+
+The tests produced some very interesting and varied results. There are
+very many factors that effect performance including BUS Speeds, CPU
+speed and features, fb driver implemtation  etc and it would seem the
+results reflect this between devices.
+
+</para>
+<para>
+
+The Ipaq and Zaurus devices are very similar pieces of hardware and
+therefore produce very similar results. The C700 results are 
+dissapointingly poor. The ATI chipset inside has a very impressive
+feature set for acceleration but its seems the specifications for this
+are not freely available to take advantage of. The GPL'd framebuffer
+driver for the chipset ( as used ) seems very limited.
+
+</para>
+<para>
+
+Linux support for the Jordana 720 is very immature, so I am untrusting
+of the Jordana's results, Im sure they could be much more optimized. 
+
+</para>
+
+
+</section>
+
+<section><title>Access Methods</title>
+
+<para>
+
+As what would be expected Direct framebuffer access is
+fastest. However Direct framebuffer write access should theoretically
+be faster than what the results have indicate, when compared to
+device bus speeds.
+
+This could likely be due to a poor framebuffer driver or not quite
+optimal gcc code generation. It has been demonstrated to me that
+taking advantage of XSCALE CPU extensions and replacing the mempy with
+a custom assembler implementation can improve speeds by quite a large
+margin.
+
+</para>
+<para>
+
+There will always be some overhead executing blits with an XServer (
+input device management, context switching etc ). However running with
+an XServer does come with much more infrastructure than just a raw
+framebuffer and it should be noted that X is still responsive with the
+test running.
+
+</para>
+<para>
+
+As expected Client to Server Image transfer over the MIT-SHM is on
+average approximately 30% faster than a 'plain' image transfer over
+Sockets. MIT-SHM is mature stable extension with
+no known serious problems and it is used extensively by numerous
+toolkits and applications.
+
+</para>
+<para>
+
+MIT-SHM blit speeds under X can get very close to that of raw
+framebuffer access ( See C700 and J720 results ) and this should at
+least in theory be the case. 
+
+However we see with both the Ipaq and Z5000d that X at best lags by
+approximately 30% compared to that of raw framebuffer access. Because
+of all the factors involved its difficult to suggest a reason for
+this, however the author of kdrive has been informed of the results
+and is looking into possible causes.
+
+</para>
+<para>
+
+Running the tests on my laptop ( power PC 550Mhz, radeon FB, 'Big'
+XFree with radeon driver ) I get equal speeds of approximately 50Mb/sec
+across raw FB, X MIT-SHM and DGA. 
+
+</para>
+<para>
+
+It should be noted my SDL knowledge is very little. I had some
+problems with the SDL binaries used , notably they did not seem to be
+able to detect the full display size correctly and I had to manually
+pass dimensions to the executable.  
+
+</para>
+
+</section>
+
+<section><title>Window / Application changing</title>
+
+<para>
+
+Apart from performance, one should also consider the various effects
+each method has on interactivity with the user. X provides a rich set
+of features for building GUI's whilst a raw framebuffer provides very
+little. Using something like SDL running on the framebuffer is a
+possible improvement to this situation.
+
+</para>
+
+<para>
+
+Running an application as a fullscreen window in X in a window managed
+environment shouldn't be a problem with a modern window
+manager. Switching between the fullscreen application and a normal
+application should be very strait forward. The window manager also
+should be able to provide features such as toggling the fullscreen mode of
+the application.
+
+</para>
+<para>
+
+With the fullscreen application running directly on the fb, it
+requires a 'VT Switch' for the X Server to free up the framebuffer
+device. Once switched the fullscreen application is outside of both
+the X Server and window managers control, which will lose flexibility. 
+
+With my referenced patches , it should be noted that switching VT's
+from X to a raw framebuffer and back seems quite stable on the tested devices.
+
+</para>
+<para>
+
+There are other possible problems that should be considered if the
+platform uses 2 different methods for rendering general
+applications/GUI enviroment and for rendering software such as games
+and video playback. One is constancy of look and feel and another is
+how to interactions between the two environments - for example if the
+user is playing a game, how is he notified the battery is running low?
+Working round these problem cause code complexity and may limit
+overall functionality.
+
+</para>
+<para>
+
+Using the DGA extension would have similar problems to a VT switch, As
+it seems to write fullscreen out of the windows managers control and
+regular windows cannot be displayed above. 
+
+</para>
+
+</section>
+
+<section><title>Network Transparency and Screen Rotation</title>
+
+<para>
+
+A unique feature of X Windows is its ability to run transparently
+across a net work meaning the X test can be run on one machine but
+output to the display of another. Toolkits like GTK2.2 and
+applications like Emacs can take advantage of this to transfer running
+application windows between displays.
+
+</para>
+
+<para>
+
+However only a plain image transfer will work - there is no shared
+memory across a network. The blitspeeds here are comparable to the
+available network bandwidth with something like a wireless connection
+quickly becoming saturated. Also it should be noted by default X does
+no compression of XImages transfered across the network.
+
+</para>
+<para>
+
+Direct blits to the frame buffer are incapable of network transparency. 
+
+</para>
+<para>
+
+Also mentioned has been X Windows ability to rotate the display
+on the fly, via the XRandR extension. Whilst this kind of effect would
+be possible with the framebuffer, It would have to be done by the
+application writing to the framebuffer or by 'physically' rotating the
+framebuffer in the kernel driver.
+
+</para>
+
+<para>
+
+XRandR ( rotated ) effects results considerably. Blitspeeds can drop
+to one fifth of the maximum in certain orientations. With a rotated
+display, X writes via an internal 'shadow framebuffer' to the real
+framebuffer rather than directly. It is this which causes the
+slowdown. 
+
+</para>
+<para>
+
+The Natural orientation of the framebuffer is unlikely to be the
+physical default orientation of the display. In these tests only the
+j720 has this setup. This further frustrates the xrandr problem where
+by X11 will be running at less than optimal speeds in the most
+regularly used orientation.
+
+</para>
+<para>
+
+It has been suggested a simple solution to this is to take advantage
+of newer PDA graphics chipsets ability to rotate the framebuffer in
+hardware. Though this is not a solution for platforms lacking a
+dedicated graphics chipset, solving the problem there would require
+complex changes to X's code base I believe.
+
+</para>
+
+</section>
+
+<section><title>Improvements and Future Directions</title>
+
+<para>
+
+Some ideas for future tests.
+
+</para>
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+Tests with newer PXA255 XSCALE based platforms such the the Sharp C750 and Ipaq 54xx series. 
+</listiem>
+<listitem>
+Similar tests with Pocket PC and Qt Embedded Environments.
+</listiem>
+<listitem>
+Network Tests with very fast ( eg Gigabit ) Networking. 
+</listiem>
+<listitem>
+Network Tests with a Compressing Proxy such as NX ( nomachine.org ). 
+</listiem>
+<listitem>
+ASM optimised test scripts and results. 
+</listitem>
+<listitem>
+Porting DGA to kdrive and testing.
+</listitem>
+</itemizedlist>
+</para>
+
+</section>
+
+
+</section>
+<section><title>References</title>
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+<ulink url="sources/">Test Source Code</ulink>
+</listitem>
+<listitem>
+<ulink url="http://handhelds.org/~mallum/xpkgs/">http://handhelds.org/~mallum/xpkgs/</ulink> ARM Binary X packaged used for tests
+</listitem>
+<listitem>
+<ulink url="http://xfree86.org">http://xfree86.org</ulink> - X servers, x11perf source etc.
+</listiem>
+<listitem>
+<ulink url="http://www.sdl.org">http://www.sdl.org</ulink> SDL library
+</listitem>
+<listitem>
+<ulink url="http://nomachine.org">nomachine.org</ulink> NX Compressing Proxy for X11.
+</listitem>
+</itemizedlist>
+
+</para>
+
+</section>
+
+</article>
+

@@ -1,0 +1,27 @@
+Device, Blit, Orientation, Bandwidth ( Kb/Sec), Surface Creation time ( ms), Frames per sec
+ framebuffer via VT switch from X, Single Blit, na, 3996,19,13
+ X MIT-SHM PutImage, Single Blit, normal, 3851.7,53.1,12
+ X MIT-SHM PutImage, Multiple Blit (x), normal, 1689.5,53.2,5
+ X MIT-SHM PutImage, Multiple Blit (y), normal, 3254.8,53.1,10
+ X MIT-SHM PutImage, Single Blit, left, 2286,53.1,7
+ X MIT-SHM PutImage, Multiple Blit (x), left, 1204.4,53,4
+ X MIT-SHM PutImage, Multiple Blit (y), left, 1697.1,53.3,5
+ X MIT-SHM PutImage, Single Blit, right, 2295.1,53.2,7
+ X MIT-SHM PutImage, Multiple Blit (x), right, 1203.4,53.1,4
+ X MIT-SHM PutImage, Multiple Blit (y), right, 1710.3,53.2,5
+ X MIT-SHM PutImage, Single Blit, inverted, 3424.1,53,11
+ X MIT-SHM PutImage, Multiple Blit (x), inverted, 1197.9,53,3.2
+ X MIT-SHM PutImage, Multiple Blit (y), inverted, 2826.7,53.1,9
+ X PutImage, Single Blit, normal, 2655.5,52.4,8
+ X PutImage, Multiple Blit(x), normal, 922.4,52.5,2.9
+ X PutImage, Multiple Blit(y), normal, 2283.3,52.5,7
+ X PutImage, Single Blit, left, 1808.6,52.6,5.9
+ X PutImage, Multiple Blit(x), left, 772.3,52.3,2
+ X PutImage, Multiple Blit(y), left, 2058.1,52.6,6.1
+ X PutImage, Single Blit, right, 1827.9,52.4,6
+ X PutImage, Multiple Blit(x), right, 772,52.5,2
+ X PutImage, Multiple Blit(y), right, 2074.8,52.3,6.2
+ X PutImage, Single Blit, inverted, 2433,52.5,8
+ X PutImage, Multiple Blit(x), inverted, 819.6,52.6,2
+ X PutImage, Multiple Blit(y), inverted, 2516.3,52.6,7.8
+ framebuffer no X, Single Blit, na, 3807.8,19,12.3

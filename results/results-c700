@@ -1,0 +1,846 @@
+framebuffer via VT switch from X, Single Blit, na
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14684 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14691 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 14687 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14673 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14687 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14630 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14691 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14673 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 14687 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 14684 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+
+X MIT-SHM PutImage, Single Blit, normal
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2065 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 2070 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2069 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 2048 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2066 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 2070 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 2070 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2069 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2050 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2048 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X MIT-SHM PutImage, Multiple Blit (x), normal
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 785 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 785 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 784 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 782 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 787 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 787 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 787 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 784 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 786 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 786 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+X MIT-SHM PutImage, Multiple Blit (y), normal
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1790 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 1790 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1781 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1794 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1788 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 1787 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1797 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1792 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1797 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1787 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+
+X MIT-SHM PutImage, Single Blit, left
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13083 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13074 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 13083 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13037 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 13083 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13086 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13089 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 12355 KB/sec
+test-x: Approx frame rate: 20 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13080 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 13083 KB/sec
+test-x: Approx frame rate: 21 frames/sec
+
+X MIT-SHM PutImage, Multiple Blit (x), left
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1363 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1366 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1367 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1365 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1361 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1363 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1356 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1362 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1366 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1367 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+X MIT-SHM PutImage, Multiple Blit (y), left
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 6096 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 6007 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 6093 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 6067 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 6121 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 5814 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 6017 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 5986 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 6079 KB/sec
+test-x: Approx frame rate: 10 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 5998 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+
+X MIT-SHM PutImage, Single Blit, right
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 76 ms
+test-x: X-SHM write speed: 8879 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8856 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8880 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8822 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8849 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8619 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8788 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8833 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 8846 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 8836 KB/sec
+test-x: Approx frame rate: 14 frames/sec
+
+X MIT-SHM PutImage, Multiple Blit (x), right
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1233 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1233 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1232 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1233 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1231 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1228 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1234 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1233 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1231 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1235 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+X MIT-SHM PutImage, Multiple Blit (y), right
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4665 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4655 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 4677 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4582 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 4608 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4620 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4502 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4623 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4620 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 4595 KB/sec
+test-x: Approx frame rate: 7 frames/sec
+
+X MIT-SHM PutImage, Single Blit, inverted
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2067 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2065 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 76 ms
+test-x: X-SHM write speed: 2070 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 2054 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2049 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 2065 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 2069 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 2067 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 2066 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 2069 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X MIT-SHM PutImage, Multiple Blit (x), inverted
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 788 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 783 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 789 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 790 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 784 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 790 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 790 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 789 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 787 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 787 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+X MIT-SHM PutImage, Multiple Blit (y), inverted
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1791 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1776 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 73 ms
+test-x: X-SHM write speed: 1788 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1776 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1784 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: X-SHM write speed: 1772 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1771 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1775 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: X-SHM write speed: 1770 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: X-SHM write speed: 1788 KB/sec
+test-x: Approx frame rate: 2 frames/sec
+
+X PutImage, Single Blit, normal
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1945 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1939 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1940 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1943 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1943 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 1938 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1939 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1941 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1922 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1940 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X PutImage, Multiple Blit(x), normal
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 535 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 529 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 525 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 519 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 521 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 518 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 514 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 82 ms
+test-x: Plain X write speed: 516 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 529 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 527 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+
+X PutImage, Multiple Blit(y), normal
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1914 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 1947 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1916 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1946 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1949 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1942 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1986 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 81 ms
+test-x: Plain X write speed: 1971 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1983 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1924 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X PutImage, Single Blit, left
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6902 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6902 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6877 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6894 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 100 ms
+test-x: Plain X write speed: 6900 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 73 ms
+test-x: Plain X write speed: 6891 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6899 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 6905 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 6898 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 100 ms
+test-x: Plain X write speed: 6895 KB/sec
+test-x: Approx frame rate: 11 frames/sec
+
+X PutImage, Multiple Blit(x), left
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 638 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 642 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 644 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 95 ms
+test-x: Plain X write speed: 652 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 650 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 93 ms
+test-x: Plain X write speed: 641 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 108 ms
+test-x: Plain X write speed: 654 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 638 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 642 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 637 KB/sec
+test-x: Approx frame rate: 1 frames/sec
+
+X PutImage, Multiple Blit(y), left
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 109 ms
+test-x: Plain X write speed: 2710 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2716 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2687 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2709 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2679 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2694 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 95 ms
+test-x: Plain X write speed: 2718 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2735 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2709 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 2684 KB/sec
+test-x: Approx frame rate: 4 frames/sec
+
+X PutImage, Single Blit, right
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5478 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5467 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 82 ms
+test-x: Plain X write speed: 5459 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5339 KB/sec
+test-x: Approx frame rate: 8 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 5476 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 5476 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5458 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5453 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 5474 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 5475 KB/sec
+test-x: Approx frame rate: 9 frames/sec
+
+X PutImage, Multiple Blit(x), right
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 470 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 480 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 485 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 487 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 484 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 507 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 480 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 497 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 513 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 485 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+
+X PutImage, Multiple Blit(y), right
+
+test-x: Surface ( 480 X 640, 600 KB ) Created in 94 ms
+test-x: Plain X write speed: 2168 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2215 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 119 ms
+test-x: Plain X write speed: 2227 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2215 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2210 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2104 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 2287 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2226 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 2216 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 480 X 640, 600 KB ) Created in 71 ms
+test-x: Plain X write speed: 2202 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X PutImage, Single Blit, inverted
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1941 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1922 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1939 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1942 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1940 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1940 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1941 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1941 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 82 ms
+test-x: Plain X write speed: 1937 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1942 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+
+X PutImage, Multiple Blit(x), inverted
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 530 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 539 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 513 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 534 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 539 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 527 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 91 ms
+test-x: Plain X write speed: 519 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 528 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 518 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 520 KB/sec
+test-x: Approx frame rate: 0 frames/sec
+
+X PutImage, Multiple Blit(y), inverted
+
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1964 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1944 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 69 ms
+test-x: Plain X write speed: 1930 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1949 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1919 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1910 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1928 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 70 ms
+test-x: Plain X write speed: 1972 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 72 ms
+test-x: Plain X write speed: 1934 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+test-x: Surface ( 640 X 480, 600 KB ) Created in 69 ms
+test-x: Plain X write speed: 1912 KB/sec
+test-x: Approx frame rate: 3 frames/sec
+framebuffer no X, Single Blit, na
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 14833 KB/Sec
+test-fb: Approx frame rate: 24 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15067 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15067 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 15060 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15071 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15067 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15003 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 15 ms
+test-fb: Framebuffer write speed: 15007 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15067 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
+test-fb: Surface ( 480 X 640, 600 KB ) Created in 14 ms
+test-fb: Framebuffer write speed: 15071 KB/Sec
+test-fb: Approx frame rate: 25 frames/sec
