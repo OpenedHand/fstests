@@ -53,6 +53,8 @@ expose(GtkWidget      *darea,
   start_clock = GetTimeInMillis(); 
 
   pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+  rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+  pixels    = gdk_pixbuf_get_pixels (pixbuf);
 
   for(y=0; y < height; y++)
     for(x=0; x < width; x++)
@@ -61,9 +63,6 @@ expose(GtkWidget      *darea,
 	guchar g = y;   
 	guchar r = x - y;
 	
-	rowstride = gdk_pixbuf_get_rowstride (pixbuf);
-	pixels    = gdk_pixbuf_get_pixels (pixbuf);
-
 	p = pixels + y * rowstride + x * n_channels;
 
 	p[0] = b; p[1] = g; p[2] = r;
@@ -73,7 +72,7 @@ expose(GtkWidget      *darea,
 
   if (Verbose)
     {
-      printf("test-x: Surface ( %i X %i, %i KB ) Created in %lli ms\n",
+      printf("test-x: Surface ( %u X %u, %lu KB ) Created in %lli ms\n",
 	     width, height, size / 1024, finish_clock - start_clock);
     }
 
@@ -154,6 +153,8 @@ main(int argc, char **argv)
   
   
   darea = gtk_drawing_area_new();
+  
+  gtk_widget_set_double_buffered (darea, FALSE);
 
   gtk_container_add(GTK_CONTAINER(window), darea);
 
