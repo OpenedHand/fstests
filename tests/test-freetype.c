@@ -270,9 +270,18 @@ framebuffer_close(void)
 }
 
 static void
+framebuffer_plot_pixel(int x, int y)
+{
+  int r = 0xff, g = 0xff, b =0xff;
+  int location = (x + vinfo.xoffset) * (vinfo.bits_per_pixel/8) + ((y + vinfo.yoffset) * fix.line_length);
+  
+  *((unsigned short int*)(fbuffer + location)) = 0xff; // (r<<11 | g << 5 | b);
+}
+
+static void
 framebuffer_blit(void)
 {
-  int x = 0, y = 200, location = 0, i, j, xx, yy;
+  int x = 0, y = 200, i, j, xx, yy, nchars;
   char  *data = NULL, *c;
   int    size = vinfo.yres * vinfo.xres * (vinfo.bits_per_pixel/8);
   unsigned long long start_clock,finish_clock,diff_clock;
@@ -299,7 +308,10 @@ framebuffer_blit(void)
     printf("Error %d occured, exiting\n", error);
   }
 
-  FT_Set_Pixel_Sizes(face, 0, TextSize);
+  // FT_Set_Pixel_Sizes(face, 0, TextSize);
+
+  /* Below assumes 72 dpi */
+  error = FT_Set_Char_Size( face, 0, 16*64, 72, 72); 
 
   if (Verbose)
     {
@@ -312,13 +324,19 @@ framebuffer_blit(void)
   for (j=0; j<TotalCycles; j++)
     {
       y = 0;
+
       for (i=0; i<TextNLines; i++)
 	{
 	  c = &TextStr[0];
 
+	  x = 0;
+
 	  while (*c != '\0')
 	    {
-	      error = FT_Load_Glyph(face, (int)*c, FT_LOAD_DEFAULT);
+	      int glyph_index = FT_Get_Char_Index( face, (int)*c );
+
+	      error = FT_Load_Glyph(face, glyph_index, FT_LOAD_DEFAULT);
+
 	      if (error) {
 		printf("WARNING: Glyph load error!\n");
 	      }
@@ -336,34 +354,50 @@ framebuffer_blit(void)
 		    {
 		      if (face->glyph->bitmap.buffer[yy*face->glyph->bitmap.width + xx] > 0)
 			{
-			  int r = 0xff, g = 0xff, b =0xff;
-			  location = (x + xx + vinfo.xoffset) * (vinfo.bits_per_pixel/8) + ((y + yy + vinfo.yoffset) * fix.line_length);
-
-			  *((unsigned short int*)(fbuffer + location)) = 0xff; // (r<<11 | g << 5 | b);
-			  // printf("paint pixel %i %i,%i\n ", location, x+xx, y+yy);
+			  framebuffer_plot_pixel(x + xx, y + yy);
 			}
 		    }
 		
 		c++;
-		x += face->glyph->bitmap.width;
+		x += face->glyph->bitmap.width + 2;
 	    }
 
-	  y += face->glyph->bitmap.rows;
+	  y += face->glyph->bitmap.rows + 2;
 
 	}
     }
-  
+ 
+  finish_clock = GetTimeInMillis();
+
+  diff_clock  = finish_clock - start_clock;
+
+  nchars = strlen(TextStr) * TextNLines * TotalCycles;
+
+  printf("test-xft: Total time %lli ms, %i glyphs rendered = approx %lli glyphs per second\n",
+	 diff_clock, nchars, ( 1000 * nchars ) / diff_clock);
+ 
   free(data);
 }
+
 
 static void
 usage(void)
 {
   fprintf(stderr, 
-	  "test-fb " VERSION "\n"
-	  "usage: test-fb [--verbose] [--multiblit] [--cycles <int>]\n");
+	  "test-xft " VERSION "\n"
+	  "usage: test-xft [options..]\n"
+          "Options are;\n"
+          "-display <X display>\n"
+	  "--verbose\n"
+	  "--text-str <str> text to render ( defaults to alphabet )\n"
+	  "--font <str> ttf font to use ( defaults to " DEFAULT_FONT ")\n"
+	  "--font-size <int> font size\n"
+	  "--nlines <int> Number of lines to draw per cycle\n"
+	  "--cycles <int>  number of times to runs the test ( default 100)\n"
+	  );
   exit(1);
 } 
+
 
 int 
 main (int argc, char **argv)
@@ -371,12 +405,35 @@ main (int argc, char **argv)
   int i;
 
   for (i = 1; i < argc; i++) {
+
+
     if (!strcmp ("--verbose", argv[i]) || !strcmp ("-v", argv[i])) {
       Verbose = 1;
       continue;
     }
-    if (!strcmp ("--multiblit", argv[i])) {
-      WantMultiBlit = 1;
+
+    if (!strcmp ("--text-str", argv[i]) ) {
+      if (++i>=argc) usage ();
+      TextStr = argv[i];
+      continue;
+    }
+
+    if (!strcmp ("--font", argv[i]) ) {
+      if (++i>=argc) usage ();
+      TextFont = argv[i];
+      continue;
+    }
+
+    if (!strcmp ("--font-size", argv[i]) ) {
+      if (++i>=argc) usage ();
+      TextSize = atoi(argv[i]);
+      continue;
+    }
+
+    if (!strcmp ("--nlines", argv[i]) ) {
+      if (++i>=argc) usage ();
+      TextNLines = atoi(argv[i]);
+      if (TextNLines < 1) usage();
       continue;
     }
 

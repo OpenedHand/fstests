@@ -146,8 +146,13 @@ main(int argc, char **argv)
   
 
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+
+  gtk_window_set_default_size(GTK_WINDOW(window),
+			      gdk_screen_get_width(gdk_display_get_default_screen (gdk_display_get_default ())),
+			      
+			      gdk_screen_get_height(gdk_display_get_default_screen (gdk_display_get_default ())));
   
-  gtk_window_maximize(GTK_WINDOW(window)); /* fullscreen  */
+  // gtk_window_maximize(GTK_WINDOW(window)); /* fullscreen  */
 
   gtk_container_set_border_width(GTK_CONTAINER(window), 0);
   
