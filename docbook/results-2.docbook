@@ -2,7 +2,7 @@
 
 <article id="fullscreen2" lang="en">
   <articleinfo>
-    <title>Fullscreen 2 ( DRAFT I )</title>
+    <title>Fullscreen 2 ( DRAFT II )</title>
     <author>
       <firstname>Matthew</firstname>
       <surname>Allum</surname>
@@ -55,6 +55,31 @@ As well as the original tests, the following new tests have been created;
 <variablelist>
 
 <varlistentry>
+<term>test-fb</term>
+<listitem>
+
+<para>
+
+Performs blits directly to the raw framebuffer device ( no X ). From the original tests.
+</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>test-x</term>
+<listitem>
+
+<para>
+
+Performs blits to an X window via SHM shared memory X Images.  From the original tests.
+</para>
+
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
 <term>test-gdk</term>
 <listitem>
 
@@ -62,7 +87,7 @@ As well as the original tests, the following new tests have been created;
 
 Performs blits via GDK-pixbufs on X. Blits are performed to a GTK
 drawing area widget with double buffering turned off. This makes the
-test comparible to the others as they perform no double buffering.
+test comparable to the others as they perform no double buffering.
 
 </para>
 
@@ -75,6 +100,8 @@ test comparible to the others as they perform no double buffering.
 <para>
 
 Renders to lines of glyphs to the framebuffer using the freetype library.
+The original version generated glyphs per glyph blit, an improved version
+was then created which pregenerated ( 'cached' ) the glyph bit masks.
 
 </para>
 
@@ -114,7 +141,8 @@ No pango layout or GTK functionality is used.
 
 Renders lines of glyphs to a GTK drawing area ( with double buffering
 disabled ) via Pango layouts. GTK/GDK must be used as only versions of
-pango &lt; 1.8 expose layout functionality to 'raw xft'.
+pango &lt; 1.8 expose layout functionality to 'raw xft'. One layout per
+line is used.
 
 </para>
 
@@ -229,6 +257,34 @@ The tests were run on the following platforms;
 </listitem>
 </varlistentry>
 
+<varlistentry>
+<term>IBM Thinkpad T40p</term>
+<listitem>
+<para>
+<itemizedlist mark="bullet" spacing="compact">
+<listitem>
+<para>CPU: x86 Pentium M 1600Mhz </para>
+</listitem>
+<listitem>
+<para>RAM: 1Gig</para>
+</listitem>
+<listitem>
+<para>Display: 1400x1050x16 LCD</para>
+</listitem>
+<listitem>
+<para>GFX Chip: ATI Radeon</para>
+</listitem>
+<listitem>
+<para>XFree86 4.3</para>
+</listitem>
+<listitem>
+<para>kernel: 2.6.9</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
 </variablelist>
 
 </section>
@@ -237,7 +293,7 @@ The tests were run on the following platforms;
 
 <para>
 
-All machines have the same version XServer and X librarys. Both of
+All ARM machines have the same version XServer and X librarys. Both of
 which are from recent checkouts of the freedesktop.org cvs kdrive
 source.  In all of the above cases no hardware acceleration was
 used. The display is also running in its 'natural' orientation.
@@ -248,10 +304,17 @@ used. The display is also running in its 'natural' orientation.
 
 The c760 device is very similar hardware wise to that of the c700,
 except having a larger battery and increased internal flash
-storage. The binaries built on the c760 are built using the softfloat
+storage. The binaries built on the c760 are built using the soft-float
 floating point emulation provided by newer gcc's. This is reportadly
 supposedly much better performing than kernel 'hardfloat' floating
 point performance.
+
+</para>
+
+<para>
+
+The Thinkpad is x86 hardware and has an XFree86 accelerated
+server.
 
 </para>
 
@@ -259,96 +322,58 @@ point performance.
 
 <section><title>Benchmark Results</title>
 
-<section><title>Zaurus c760</title>
+<section><title>Blit Results</title>
 
 <para>
 
-<literallayout class="monospaced">
+<table frame='all'><title>Test Results</title>
+<tgroup cols='8' align='left' colsep='1' rowsep='1'>
+<thead>
+<row>
+  <entry>Device</entry>
+  <entry>test-fb</entry>
+  <entry>test-x</entry>
+  <entry>test-gdk</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry>c760</entry>
+  <entry align='right'>12177 KB/Sec</entry>
+  <entry align='right'>11015 KB/sec</entry>
+  <entry align='right'>6163 KB/sec</entry>
+</row>
 
-test-fb: Framebuffer write speed: 12177 KB/Sec
+<row>
+  <entry>Ipaq 5550</entry>
+  <entry align='right'>7425 KB/Sec</entry>
+  <entry align='right'>6412 KB/sec</entry>
+  <entry align='right'>5184 KB/sec</entry>
+</row>
 
-test-x: X-SHM write speed: 11015 KB/sec
+<row>
+  <entry>Ipaq 3800</entry>
+  <entry align='right'>30241 KB/Sec </entry>
+  <entry align='right'>23547 KB/Sec</entry>
+  <entry align='right'>11144 KB/sec</entry>
+</row>
 
-test-gdk: write speed: 6163 KB/sec
+<row>
+  <entry>Thinkpad T40p</entry>
+  <entry align='right'>137896 KB/Sec</entry>
+  <entry align='right'>370451 KB/Sec</entry>
+  <entry align='right'>317215 KB/sec</entry>
+</row>
 
-test-freetype: Total time 44971 ms, 52000 glyphs rendered = approx 1156 glyphs per second
-
-test-xft: Total time 5540 ms, 52000 glyphs rendered = approx 9386 glyphs per second
-
-test-pango: Total time 7747 ms, 52000 glyphs rendered = approx 6712 glyphs per second
-
-test-pango-layout: Total time 9357 ms, 52000 glyphs rendered = approx 5557 glyphs per second
-
-
-
-
-</literallayout>
+</tbody>
+</tgroup>
+</table>
 
 </para>
 
 </section>
 
-<section><title>ipaq 5500</title>
-
-<para>
-
-<literallayout class="monospaced">
-
-test-fb: Framebuffer write speed: 7425 KB/Sec
-
-test-x: Approx frame rate: 42 frames/sec
-
-test-gdk: write speed: 5184 KB/sec
-
-test-freetype: Total time 30386 ms, 52000 glyphs rendered = approx 1711 glyphs
-+per second
-
-test-xft: Total time 2738 ms, 52000 glyphs rendered = approx 18991 glyphs per
-+second
-
-test-pango: Total time 4265 ms, 52000 glyphs rendered = approx 12192
-glyphs per second
-
-test-pango-layout: Total time 5565 ms, 52000 glyphs rendered = approx
-9344 glyphs per second
-
-</literallayout>
-
-</para>
-
-</section>
-
-<section><title>ipaq 3850</title>
-
-<para>
-
-<literallayout class="monospaced">
-
-test-x: X-SHM write speed: 23547 KB/sec
-
-test-gdk: write speed: 11144 KB/sec
-
-test-freetype: Total time 54325 ms, 52000 glyphs rendered = approx 957 glyphs per second
-
-test-xft: Total time 2899 ms, 52000 glyphs rendered = approx 17937 glyphs per second
-
-test-pango-layout: Total time 5602 ms, 52000 glyphs rendered = approx 9282 glyphs per second
-
-test-pango: Total time 4538 ms, 52000 glyphs rendered = approx 11458 glyphs per second
-
-
-
-</literallayout>
-
-</para>
-
-</section>
-
-</section>
-
-<section><title>Discussion</title>
-
-<section><title>Blitting</title>
+<section><title>Blit Discussion</title>
 
 <para>
 
@@ -359,7 +384,7 @@ developments have happened in this area since the tests were last run.
 </para>
 <para>
 
-However the c760 is using a 2.6 kernel and performance has actually
+The c760, however, is using a 2.6 kernel and performance has actually
 degraded. This is not too much of a worry though, the 2.6 kernel on
 the c760 is very immature and the performance degration has been
 reported to the fb driver author. The fb driver is infact a rewrite of
@@ -368,11 +393,25 @@ the 2.4 driver without access to the display chips technical details.
 </para>
 <para>
 
-The 5500 framebuffer access is also very slow. The fb driver lacks
-acceleration functionality provided by the mediaq chip and it seems
-with display chip in place and it just slows down the general frame buffer access. The 3800 is fastest of all with direct access to the display.
+The 5500 results are very odd, its seems actual framebuffer access is
+slow during heavy blits but actual font rendering was very fast in
+comparison.  The fb driver lacks any acceleration functionality
+provided by the mediaq chip. Could it possibly be the driver or
+hardware imposes some kind of bottleneck under heavy load that is 
+causing strnage results ? The same results appeared even after a second
+seperate run of the benchmarks.
 
 </para>
+
+<para>
+
+The 3800 is fastest of all ARM devices with direct access to the
+display. It has no graphics chip driver. The linux support for the
+hardware is very mature when compared to the other two devices. The
+CPU however is the slowest.
+
+</para>
+
 <para>
 
 GDK pixbuf blits take a further large speed hit over pure X SHM blits. A
@@ -384,9 +423,8 @@ server.
 
 <para>
 
-Interstingly this difference is not as large when run on an x86
-system.  On a 16bpp Xephyr I get 25917 KB/sec ( gtk ) vs 28195 KB/sec
-( x ). Could there perhaps be a more serious issue with gtk on ARM ?
+Interestingly this difference is not as large when run on an x86
+system. Could there perhaps be a more serious issue with gtk on ARM ?
 This needs further investigation. Version 2.4 of GTK was use for the
 tests which apparently does not suffer the previously reported SHM
 bug.
@@ -395,10 +433,30 @@ bug.
 
 <para>
 
-The gtk test disabled the internal double buffering on the drawing
-area widget. Performing such a test without double buffering requires
-putting the paint in an idle handler. Such a test was created (
-test-gdk-idle ) and the results were just slightly worse with;
+The gtk blit test disabled the internal double buffering on the
+drawing area widget ( via gtk_widget_set_double_buffered(FALSE) ) to
+make the test similar to that of other fullscreen blit tests which use
+no double buffering.
+
+</para>
+
+<para>
+
+Gtk double buffering working in such away that the widgets visible
+window is replaced with an offscreen pixmap before its expose()
+handler is called, on returning from this handler the pixmap is copied
+to the visible window. To accomplish a similar test with double
+buffering the blit must happen else when in the code so the double
+buffering expose mechanism can still take place. It was therefor
+placed in an idle handler which after blitting would trigger the
+expose handler.
+
+</para>
+
+<para>
+
+Such a test was created ( test-gdk-idle ) and the results, from Ipaq
+3800, were just slightly worse with;
 
 </para>
 <para>
@@ -413,35 +471,113 @@ test-gdk-idle: write speed: 11227 KB/sec
 </para>
 <para>
 
-In GTK double buffering means that when expose() is called for a
-widget, its window is replaced with a off-screen drawable, and then on
-returning from the expose() the offscreen drawable is blitted onscreen
-and its window restored. Thus any performance loss is likely due to
-the frequency of the idle handler getting called. ( assuming the cost
-is moving the pixmap from off -> on screen is made up by blitting off
-screen ).
+Any performance loss in the above is likely due to the frequency of
+the idle handler getting called. This assumes the cost is moving the
+pixmap from off to on screen is made up by the time save blitting to
+an off screen pixmap.
+
+</para>
+
+<para> 
+
+On x86 test-x is 3 times faster than test-fb, this is the
+effect of having an accelerated server.
+
+</section>
+
+<section><title>Glyph Results</title>
+
+<para>
+
+<table frame='all'><title>Test Results</title>
+<tgroup cols='5' align='left' colsep='1' rowsep='1'>
+<thead>
+<row>
+  <entry>Device</entry>
+  <entry>test-freetype</entry>
+  <entry>test-freetype-cached</entry>
+  <entry>test-xft</entry>
+  <entry>test-pango</entry>
+  <entry>test-pango-layout</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry>c760</entry>
+  <entry align='right'>1156 glyphs/sec</entry>
+  <entry align='right'>Not Run</entry>
+  <entry align='right'>9386 glyphs/sec</entry>
+  <entry align='right'>6712 glyphs/sec</entry>
+  <entry align='right'>5557 glyphs/sec</entry>
+</row>
+
+<row>
+  <entry>Ipaq 5550</entry>
+  <entry align='right'>1711 glyphs/sec</entry>
+  <entry align='right'>Not Run</entry>
+  <entry align='right'>18991 glyphs/sec</entry>
+  <entry align='right'>12192 glyphs/sec</entry>
+  <entry align='right'>9344  glyphs/sec</entry>
+</row>
+
+<row>
+  <entry>Ipaq 3800</entry>
+  <entry align='right'>957 glyphs/sec</entry>
+  <entry align='right'>25304 glyphs/sec</entry>
+  <entry align='right'>17937 glyphs/sec</entry>
+  <entry align='right'>11458 glyphs/sec</entry>
+  <entry align='right'>9282 glyphs/sec</entry>
+</row>
+
+<row>
+  <entry>Thinkpad T40p</entry>
+  <entry align='right'>28904 glyphs/sec</entry>
+  <entry align='right'>28812 glyphs/sec</entry>
+  <entry align='right'>16634 glyphs/sec</entry>
+  <entry align='right'>15384 glyphs/sec</entry>
+  <entry align='right'>15298 glyphs/sec</entry>
+</row>
+
+</tbody>
+</tgroup>
+</table>
 
 </para>
 
 </section>
 
-<section><title>Glyphs</title>
+<section><title>Glyph Discussion</title>
 
 <para>
 
-In all cases the xft rendering is fastest. The plain pango line
-rendering is approximatly 30% slower, with pango layout rendering
-being approxinmatly a further 10-20% slower.
+With pregenerated glyphs freetype is fastest, then xft. The plain
+pango line rendering is approximately 30% slower, with pango layout
+rendering being approximately a further 10-20% slower.
 
 </para>
 
 <para>
 
-The freetype test is much slower than expected on ARM platforms. On a
-desktop x86 system the results are much improved with speeds as
-expected greater than that of xft. The reason for the low performance
-on arm is likely the lack of any glyph bitmap caching per glyph render
-and the bitmap generation using much floating point. 
+Although total speeds vary between each platform, the fraction of
+difference in speed between each test type stays approximatly the same
+( though this is not so true on Thinkpad ).
+
+</para>
+
+<para>
+
+The Thinkpad results, though fast, are slower than expected when
+compared to blit speeds on both fb and X. I am not sure why this is.
+
+</para>
+
+<para>
+
+The non cached freetype test is much slower than expected on ARM
+platforms. On a desktop x86 system the results are much improved with
+speeds as expected greater than that of xft. The reason for the low
+performance on arm is likely the lack of any glyph bitmap caching per
+glyph render and the bitmap generation using much floating point.
 
 </para>
 <para>
@@ -454,7 +590,8 @@ required for acceptable performance.
 
 To further improve on this a version of test-freetype (
 test-freetype-cached.c ) was created that pregenerated glypth bitmaps
-in a simple cache before painting them. Running on the 3800 gave;
+in a simple cache before painting them. Running on the Ipaq 3800 gave
+( including cache generation time );
 
 </para>
 <para>
@@ -468,10 +605,12 @@ test-freetype-cached: Total time 2055 ms,
 </literallayout>
 
 </para>
+
 <para>
 
 It should also be noted that the test-freetype test very crudely
 renders just the 8 bit mask to the display ( all bits > 0 are blitted ).
+No subpixel or even basic anti-aliasing was performed.
 
 </para>
 
@@ -481,10 +620,11 @@ test-pango writes text via the low level pango xft calls to render
 lines of text to an X window. No gdk/gtk calls are used. To
 investigate the overhead of rendering to a gtk widget and window two
 further tests were created - test-pango-gdk to a GDk Window and
-test_pango_gtk - to GTK drawing area. Benchmarks from these were
-approximatly equal. Another test was created using gdk_draw_glyphs()
-instead of pango_xft_render() again results were comparable -
-indicating draw_glyphs is just a wrapper around pango_xft_render().
+test_pango_gtk - to GTK drawing area. Benchmarks from these on the
+3800 were approximately equal. Another test was created using
+gdk_draw_glyphs() instead of pango_xft_render() again results were
+comparable - indicating draw_glyphs is just a wrapper around
+pango_xft_render().
 
 </para>
 
@@ -497,6 +637,10 @@ simple line.
 
 </para>
 
+<para>
+
+
+</para>
 
 </section>
 
@@ -516,6 +660,15 @@ Some ideas for future tests.
 <para>Investigate gtk slow blits more fully.</para>
 </listitem>
 
+<listitem>
+<para>Create a pango test with all lines in a single layout</para>
+</listitem>
+
+<listitem>
+<para>Investigate slow glyph speeds on x86.</para>
+</listitem>
+
+
 </itemizedlist>
 
 </para>
@@ -527,8 +680,20 @@ Some ideas for future tests.
 
 <itemizedlist mark="bullet" spacing="compact">
 <listitem>
-<para><ulink url="sources/">Test Source Code</ulink></para>
+<para><ulink url="fstests-0.1.tar.gz">Test Source Code</ulink></para>
 </listitem>
+<listitem>
+<para><ulink url="http://www.freetype.org/">Freetype.org</ulink></para>
+</listitem>
+
+<listitem>
+<para><ulink url="http://www.pango.org/">Pango</ulink></para>
+</listitem>
+
+<listitem>
+<para><ulink url="http://www.fontconfig.org/wiki/">Xft/Fontconfig</ulink></para>
+</listitem>
+
 </itemizedlist>
 
 </para>
