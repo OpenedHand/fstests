@@ -120,6 +120,7 @@ usage(void)
 int 
 main(int argc, char **argv)
 {
+  gboolean Buffered = FALSE;
   GtkWidget *window = 0;
   GtkWidget *darea  = 0;
   
@@ -131,6 +132,11 @@ main(int argc, char **argv)
 
     if (!strcmp ("--verbose", argv[i]) || !strcmp ("-v", argv[i])) {
       Verbose = TRUE;
+      continue;
+    }
+
+    if (!strcmp ("--buffered", argv[i]) || !strcmp ("-b", argv[i])) {
+      Buffered = TRUE;
       continue;
     }
 
@@ -159,7 +165,7 @@ main(int argc, char **argv)
   
   darea = gtk_drawing_area_new();
   
-  gtk_widget_set_double_buffered (darea, FALSE);
+  gtk_widget_set_double_buffered (darea, Buffered);
 
   gtk_container_add(GTK_CONTAINER(window), darea);
 
