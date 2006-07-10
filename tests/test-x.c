@@ -104,11 +104,13 @@ x_open(void)
   width    = DisplayWidth(dpy, scr);
   height   = DisplayHeight(dpy, scr);
 
+  /*
   if (depth != 16)
     {
       fprintf(stderr, "Display depth is not 16bpp\n");
       exit(1);
     }
+  */
 
   gcv.foreground = BlackPixel(dpy, scr);
   gcv.background = WhitePixel(dpy, scr);
@@ -192,15 +194,26 @@ x_blit(void)
 
   start_clock = GetTimeInMillis(); 
 
-  for(y=0; y < height; y++)
-    for(x=0; x < width; x++)
-      {
-	int b = 10;
-	int g = ( x - 100 ) / 6;   
-	int r = 31 - ( y - 100 ) / 16;
+  if (depth == 16)
+    {
+      for(y=0; y < height; y++)
+	for(x=0; x < width; x++)
+	  {
+	    int b = 10;
+	    int g = ( x - 100 ) / 6;   
+	    int r = 31 - ( y - 100 ) / 16;
 	
-	XPutPixel(ximg, x, y, (r<<11 | g << 5 | b));
-      }
+	    XPutPixel(ximg, x, y, (r<<11 | g << 5 | b));
+	  }
+    }
+  else
+    {
+      for(y=0; y < height; y++)
+	for(x=0; x < width; x++)
+	  {
+	    XPutPixel(ximg, x, y, rand() * 255);
+	  }
+    }
 
   finish_clock = GetTimeInMillis();
 
