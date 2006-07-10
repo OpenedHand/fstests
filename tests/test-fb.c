@@ -198,14 +198,14 @@ framebuffer_open (char *fbdevice,
 	}
     }
   */
-
+  /*
   if(vinfo.bits_per_pixel != 16)
     {
       perror("Framebuffer is not 16bpp.");
       close(fb_fd);
       return -1;
     }
-
+  */
   fbuffer = mmap(NULL, fix.smem_len, 
 		 PROT_READ | PROT_WRITE, MAP_FILE | MAP_SHARED, 
 		 fb_fd, 0);
@@ -255,20 +255,36 @@ framebuffer_blit(void)
 
   start_clock = GetTimeInMillis(); 
 
-  for ( y = 0; y < vinfo.yres; y++ )
-    for ( x = 0; x < vinfo.xres; x++ ) 
-      {
-	/* Random colours */
-	int b = 10;
-	int g = ( x - 100 ) / 6;   
-	int r = 31 - ( y - 100 ) / 16;
-	
-	location = (x + vinfo.xoffset) * (vinfo.bits_per_pixel/8) +
+  if (vinfo.bits_per_pixel == 16)
+    {
+      for ( y = 0; y < vinfo.yres; y++ )
+	for ( x = 0; x < vinfo.xres; x++ ) 
+	  {
+	    /* Random colours */
+	    int b = 10;
+	    int g = ( x - 100 ) / 6;   
+	    int r = 31 - ( y - 100 ) / 16;
+	    
+	    location = (x + vinfo.xoffset) * (vinfo.bits_per_pixel/8) +
 	  (y + vinfo.yoffset) * fix.line_length;
 	
-	*((unsigned short int*)(data + location)) = (r<<11 | g << 5 | b);
-      }
-  
+	    *((unsigned short int*)(data + location)) = (r<<11 | g << 5 | b);
+	  }
+    }
+  else 
+    {
+      /* Assume 8 */
+
+      for ( y = 0; y < vinfo.yres; y++ )
+	for ( x = 0; x < vinfo.xres; x++ ) 
+	  {
+	    location = (x + vinfo.xoffset) * (vinfo.bits_per_pixel/8) +
+	      (y + vinfo.yoffset) * fix.line_length;
+	
+	    *((unsigned char*)(data + location)) = rand() * 255;
+	  }
+    }
+
   finish_clock = GetTimeInMillis();
 
   if (Verbose)
