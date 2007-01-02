@@ -1,0 +1,46 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns="http://usefulinc.com/ns/doap#">
+
+	<name>FSTests</name>
+	<shortname>fstests</shortname>
+	<created>2006-21-11</created>
+
+	<shortdesc xml:lang="en">fstests consists of a number of simple tools to benchmark framebuffer performance</shortdesc>
+
+	<description xml:lang="en"> 
+
+        fstests consists of a number of simple tools to benchmark
+        framebuffer write and text rendering speeds comparing GTK,
+        SDL, X11 and raw framebuffer access mechanisms.
+
+	</description>
+
+	<license rdf:resource="http://usefulinc.com/doap/licenses/gpl" />
+        <os>linux</os>
+        <programming-language>C</programming-language>
+        <category rdf:resource="http://labs.o-hand.com/doap/category/tools"/>
+        <category rdf:resource="http://labs.o-hand.com/doap/category/x11"/>
+        <category rdf:resource="http://labs.o-hand.com/doap/category/system"/>
+	<maintainer>
+		<foaf:Person>
+			<foaf:name>Matthew Allum</foaf:name>
+			<foaf:mbox rdf:resource="mailto:mallum@o-hand.com"/>
+		</foaf:Person>
+	</maintainer>
+
+	<author>
+		<foaf:Person>
+			<foaf:name>Matthew Allum</foaf:name>
+			<foaf:mbox rdf:resource="mailto:mallum@o-hand.com"/>
+		</foaf:Person>
+	</author>
+
+        <repository>
+		<SVNRepository>
+			<browse rdf:resource="http://svn.o-hand.com/view/misc/trunk/fstests"/>
+			<location rdf:resource="https://svn.o-hand.com/repos/misc/trunk/fstests"/>
+		</SVNRepository>
+        </repository>
+
+</Project>
